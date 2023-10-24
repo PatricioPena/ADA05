@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenguajes de consulta</title>
+    <link href="Styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="container">
+        <form id="queryForm" action="back/QueryResults.php" method="POST">
+            <input type="text" placeholder="Termino a buscar" class="queryString" id="queryString" name="queryString"/>
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
+    
+    <div class="results container" id="results" name="results">
+
+    </div>
+</body>
+</html>
