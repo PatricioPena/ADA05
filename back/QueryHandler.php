@@ -55,31 +55,31 @@ class QueryHandler
         $obj = json_decode($results, true);
 
         foreach ($obj['items'] as $o) {
-            // print_r($o['guid']);
-            // echo ("</br>");
             $listItem = $htmlPage->createElement("li");
-            $listItem->textContent = $o["guid"];
-
+//Crea una condición si el item tiene un "score" que lo muestre y lo multiplique *.5 para quedar en rango 0-100
+            if (isset($o['score'])) {
+                $o["score"] = $o["score"] *.5 ;
+                $listItem->textContent = $o["guid"] . " - Score: " . $o['score'];
+            } else {
+                $listItem->textContent = $o["guid"];
+            }
+        
             if ($listItem) {
                 $resultList->appendChild($listItem);
             } else {
                 echo ("error appending child to resultList");
             }
-
         }
-
+        
         if ($resultList) {
             $resultsContent->appendChild($resultList);
         } else {
             echo ("error appending child to resultContent");
         }
-
+        
         $htmlPage->saveHTMLFile("../indexResults.html");
-
+        
         header("location: ../indexResults.html");
-
-
-    }
-}
+}}
 
 ?>
