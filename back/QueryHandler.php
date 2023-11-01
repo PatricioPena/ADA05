@@ -59,7 +59,7 @@ class QueryHandler
 //Crea una condición si el item tiene un "score" que lo muestre y lo multiplique *.5 para quedar en rango 0-100
             if (isset($o['score'])) {
                 $o["score"] = $o["score"] *.5 ;
-                $listItem->textContent = $o["guid"] . " - Score: " . $o['score'];
+                $listItem->textContent = $o["guid"] . " - SCORE: " . $o['score'];
             } else {
                 $listItem->textContent = $o["guid"];
             }
